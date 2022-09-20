@@ -11,10 +11,13 @@ class Category(models.Model):
 
 class Item(models.Model):
   name = models.CharField(max_length=70)
+  description = models.CharField(max_length=300, default="")
   price = models.IntegerField()
   last_updated = models.DateTimeField(auto_now_add=True)
   category = models.ForeignKey(Category, related_name="items", on_delete=models.CASCADE)
   created_by = models.ForeignKey(User, related_name='creator', on_delete=models.CASCADE)
+  def __str__(self):
+        return f"{self.name}: {self.description}"
 
 class Review(models.Model):
   title= models.CharField(max_length=30)
@@ -24,3 +27,5 @@ class Review(models.Model):
   item = models.ForeignKey(Item, related_name='item', on_delete=models.CASCADE)
   created_by = models.ForeignKey(User, related_name='reviewer', on_delete=models.CASCADE)
   updated_by = models.ForeignKey(User, null=True, related_name='+', on_delete=models.CASCADE)
+  def __str__(self):
+        return f"{self.title}: {self.description}"

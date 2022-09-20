@@ -10,6 +10,8 @@ from .models import Category
 # Now we have to tell Django when to serve this view. It’s done inside the urls.py file:
 def home(request):
   categories = Category.objects.all()
+  for cat in categories:
+    print(cat)
   
   return render(request, 'home.html', {'categories': categories})
   # return HttpResponse(response_html)
