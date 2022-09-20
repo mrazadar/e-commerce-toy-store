@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap-v-5.2/css/bootstrap.min.css' %}">
+  </head>
+  <body>
+    <h1>Categories</h1>
+
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Categories</th>
+          <th>Items</th>
+          <th>Reviewers</th>
+          <th>Last Comment</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for cat in categories %}
+          <tr>
+            <td>
+              {{ cat.name }}<br>
+              <small style="color: #888">{{ cat.description }}</small>
+            </td>
+            <td>0</td>
+            <td>0</td>
+            <td></td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>

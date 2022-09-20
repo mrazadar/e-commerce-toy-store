@@ -1,0 +1,21 @@
+# OSX
+.DS_Store
+venv/
+# Xcode
+
+# node.js
+#
+node_modules/
+npm-debug.log
+yarn-error.log
+yarn.lock
+package-lock.json
+.npmrc
+
+# Bundle artifact
+*.jsbundle
+
+# CocoaPods
+/ios/Pods/
+
+**/.vscode/
